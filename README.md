@@ -1,18 +1,14 @@
-# BII_Maricopa
-Assessing the Biodiversity Intactness Index in Maricopa County
+# Biodiversity Intactness Index(BII) Assessment
+The Goal of this assessment will be to create the following map that shows the BII from 2020 with highlighted areas that show where high biodiversity areas were lost from 2017 to 2020.
 
-Instructions
+![BII_map.png](attachment:BII_map.png)
+## Context
+In 2021, Maricopa County, which encompasses the Phoenix metropolitan area, was the US county that added the most developed land since 2001 [1]. Urban sprawl creates pressure on biodiversity and natural areas. In this task you will explore a dataset showing values for a biodiversity intactness index (BII) to find changes in this BII around the Phoenix area from 2017 to 2020. 
+
+1. Levitt, Z., &amp; Eng&nbsp; , J. (2021, August 11). Where America’s developed areas are growing: ‘Way off into the horizon.’ https://www.washingtonpost.com/nation/interactive/2021/land-development-urban-growth-maps/ 
 
 ## Data access:
-#### BII data: This dataset is part of the MPC STAC catalog. You will need to access the ‘io-biodiversity’ collection and look for the 2017 and 2020 rasters covering Phoenix subdivision. You can use the following coordinates for a bounding box: 
-[-112.826843, 32.974108, -111.184387, 33.863574]
-#### Phoenix subdivision: You will find the Phoenix subdivision polygon in the Census County Subdivision shapefiles for Arizona: https://www.census.gov/cgi-bin/geo/shapefiles/index.php?year=2022&layergroup=County+Subdivisions
+BII data: This dataset is part of the MPC STAC catalog. You will need to access the ‘io-biodiversity’ collection and look for the 2017 and 2020 rasters covering Phoenix subdivision. You can learn more about the dataset here: Microsoft Planetary Computer. Planetary Computer. (n.d.). https://planetarycomputer.microsoft.com/dataset/io-biodiversity#overview 
 
-- Create a map showing the Phoenix subdivision within an appropriate geographical context. You may use any vector datasets to create your map. (You can also check out the contextily package.)
+Phoenix subdivision: You will find the Phoenix subdivision polygon in the Census County Subdivision shapefiles for Arizona: Responsible Party U.S. Department of Commerce, U.S. Census Bureau, Geography Division, Spatial Data Collection and Products Branch (Publisher). (2022, November 1). Tiger/line shapefile, 2021, state, Arizona, county subdivisions. Catalog. https://catalog.data.gov/dataset/tiger-line-shapefile-2021-state-arizona-county-subdivisions 
 
-- Calculate the percentage of area of the Phoenix subdivision with a BII of at least 0.75 in 2017. Obtain the same calculation for 2020.
-HINTS (useful or not depending on your workflow): 
-- Let x be an xarray.DataArray. We can select all the values greater than n by simply doing x>n. This will return an xarray.DataArray with boolean values. You can then transform this into an xarray.DataArray with 0s and 1s (instead of True/False) by casting it as type ‘int’. 
-- To calculate the percentage area: (pixels in class)/(total pixels) * 100. 
-
-Create a visualization showing the area with BII>=0.75 in 2017 that was lost by 2020. 
